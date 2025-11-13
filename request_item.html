@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vender Request Item</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .vender-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .header-nav {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn.btn-long {
+            padding: 20px;
+            font-size: 18px;
+        }
+        
+        .btn:hover {
+            background-color: #3a6696;
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .item-card {
+            background-color: #4a77a6;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="vender-title">Vender</div>
+
+        <nav class="header-nav">
+            <button class="btn">Home</button>
+            <button class="btn btn-long">Request Item</button>
+            <button class="btn">LogOut</button>
+        </nav>
+
+        <main class="item-grid">
+            <div class="item-card">Item 1</div>
+            <div class="item-card">Item 2</div>
+            <div class="item-card">Item 3</div>
+            <div class="item-card">Item 4</div>
+        </main>
+
+    </div>
+
+</body>
+</html>

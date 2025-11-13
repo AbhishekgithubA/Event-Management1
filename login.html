@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            background-color: #d3d3d3; /* Poora gray background */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Form ko center mein rakhne waala container */
+        .login-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        /* Header: "Event Management System" */
+        .header {
+            background-color: #b0d4e8; /* Halka neela */
+            color: #333;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        /* Form ke content ke liye (labels + inputs) */
+        .form-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* Labels ke liye 1 hissa, Inputs ke liye 2 hisse */
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* Labels: "User Id", "Password" */
+        .label {
+            background-color: #4a77a6; /* Gehra neela */
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* Input Fields */
+        .input-field {
+            background-color: #b0d4e8; /* Halka neela */
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        /* Buttons ka area */
+        .button-group {
+            grid-column: 2; /* Buttons ko input fields ke neeche rakha */
+            display: flex;
+            justify-content: flex-end; /* Buttons ko right side align kiya */
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        /* "Cancel" aur "Login" buttons */
+        .btn {
+            background-color: #a9a9a9; /* Gray */
+            color: #222;
+            border: 1px solid #777;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #999;
+        }
+
+        /* Naya "Sign Up" option */
+        .signup-option {
+            grid-column: 1 / -1; /* Yeh line poori width legi */
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        .signup-option a {
+            color: #0000ee;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .signup-option a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="header">Event Management System</div>
+
+        <form class="form-content" id="loginForm">
+            
+            <div class="label">User Id</div>
+            <input type="text" class="input-field" placeholder="Admin">
+
+            <div class="label">Password</div>
+            <input type="password" class="input-field" placeholder="Admin">
+
+            <div class="button-group">
+                <button type="button" class="btn" id="cancelBtn">Cancel</button>
+                <button type="button" class="btn" 
+        onclick="window.location.href='user_portal.html'">
+    LOGIN
+</button>
+            </div>
+
+            <div class="signup-option">
+             <a href="#" id="signUpLink">Sign Up</a>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // Login button par click
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Page ko refresh hone se rokna
+            alert('Aapne LOGIN par click kiya!');
+        });
+
+        // Cancel button par click
+        document.getElementById('cancelBtn').addEventListener('click', function() {
+            // Cancel karne par vaapis index.html par bhej sakte hain
+            window.location.href = 'index.html';
+        });
+
+        // Sign Up link par click
+        document.getElementById('signUpLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Aapne SIGN UP link par click kiya!');
+        });
+    </script>
+
+</body>
+</html>

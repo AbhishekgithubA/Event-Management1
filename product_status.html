@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Status</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .main-header {
+            background-color: #4a77a6;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 0 auto 30px auto;
+            max-width: 400px;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3a6696;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .grid-header {
+            background-color: #4a77a6;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            box-sizing: border-box;
+        }
+        
+        .grid-input {
+            background-color: #4a77a6;
+            color: white;
+            border: 2px solid #4a77a6;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            min-height: 48px;
+            box-sizing: border-box;
+        }
+        
+        .grid-input::placeholder {
+            color: #d0d0d0;
+        }
+
+        .grid-input:focus {
+            outline: none;
+            border-color: white;
+        }
+        
+        .grid-btn {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            min-height: 48px;
+            box-sizing: border-box;
+        }
+        
+        .grid-btn:hover {
+             background-color: #3a6696;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="main-header">
+            Product Status
+        </div>
+
+        <nav class="top-nav">
+            <button class="btn">Home</button>
+            <button class="btn">LogOut</button>
+        </nav>
+
+        <main class="status-grid">
+            
+            <div class="grid-header">Name</div>
+            <div class="grid-header">E-Mail</div>
+            <div class="grid-header">Address</div>
+            <div class="grid-header">Status</div>
+            <div class="grid-header">Update</div>
+            <div class="grid-header">Delete</div>
+
+            <input type="text" class="grid-input" placeholder="">
+            <input type="email" class="grid-input" placeholder="">
+            <input type="text" class="grid-input" placeholder="">
+            <input type="text" class="grid-input" placeholder="">
+            
+            <button class="grid-btn" id="update-btn">Update</button>
+            <button class="grid-btn" id="delete-btn">Delete</button>
+
+        </main>
+
+    </div>
+
+    <script>
+        const updateButton = document.getElementById('update-btn');
+        const deleteButton = document.getElementById('delete-btn');
+        const inputs = document.querySelectorAll('.grid-input');
+
+        deleteButton.addEventListener('click', function() {
+            inputs.forEach(input => {
+                input.value = '';
+            });
+        });
+        
+        updateButton.addEventListener('click', function() {
+            alert('Updated!');
+        });
+    </script>
+
+</body>
+</html>

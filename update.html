@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Status</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3a6696;
+        }
+
+        .status-box {
+            background-color: #4a77a6;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            margin: 0 auto 40px auto;
+            max-width: 450px;
+        }
+
+        .status-box h2 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .radio-group {
+            text-align: left;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .radio-option input[type="radio"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: white; /* Change radio button color */
+        }
+        
+        .radio-option label {
+            cursor: pointer;
+        }
+
+        .btn-update-bottom {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 12px 60px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-update-bottom:hover {
+            background-color: #3a6696;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="top-nav">
+            <button class="btn">Home</button>
+            <button class="btn">LogOut</button>
+        </nav>
+
+        <div class="status-box">
+            <h2>Update</h2>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="received" name="deliveryStatus" value="Received">
+                    <label for="received">Recieved</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="readyForShipping" name="deliveryStatus" value="Ready for Shipping">
+                    <label for="readyForShipping">Ready for Shipping</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="outForDelivery" name="deliveryStatus" value="Out For Delivery">
+                    <label for="outForDelivery">Out For Delivery</label>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-update-bottom" id="update-status-btn">Update</button>
+
+    </div>
+
+    <script>
+        document.getElementById('update-status-btn').addEventListener('click', function() {
+            const selectedStatus = document.querySelector('input[name="deliveryStatus"]:checked');
+            if (selectedStatus) {
+                alert(`Status updated to: ${selectedStatus.value}`);
+               
+            } else {
+                alert('Please select a status to update.');
+            }
+        });
+    </script>
+
+</body>
+</html>

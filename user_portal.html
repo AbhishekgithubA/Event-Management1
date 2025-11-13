@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .header {
+            background-color: #4a77a6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #4a77a6;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+            
+            /* यह <select> को बटन जैसा दिखाने के लिए है */
+            appearance: none;
+            text-align-last: center;
+        }
+
+        .btn:hover {
+            background-color: #3a6696;
+        }
+
+        /* ड्रॉपडाउन के अंदर के ऑप्शन का स्टाइल */
+        .btn option {
+            background-color: white;
+            color: black;
+        }
+
+        .logout-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout-container .btn {
+            max-width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header">
+            WELCOME USER
+        </div>
+        
+        <div class="nav-grid">
+            
+            <select class="btn" required>
+                <option value="" disabled selected>Vendor</option>
+                <option value="catering">Catering</option>
+                <option value="florist">Florist</option>
+                <option value="decoration">Decoration</option>
+                <option value="lighting">Lighting</option>
+            </select>
+            
+            <button type="button" class="btn" 
+        onclick="window.location.href='cart.html'">
+    Cart
+</button>
+            <button type="button" class="btn">Guest List</button>
+            <button type="button" class="btn" 
+        onclick="window.location.href='order_status.html'">
+    Order Status
+</button>
+        </div>
+
+        <div class="logout-container">
+            <button type="button" class="btn">LogOut</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

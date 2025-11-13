@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            background-color: #cccccc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .page {
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: black;
+            border: 2px solid #90ee90;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title-header {
+            background-color: white;
+            color: black;
+            border: 2px solid #90ee90;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 0 auto 40px auto;
+            max-width: 500px;
+        }
+
+        .admin-main-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .maintain-layout {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 40px;
+            margin-top: 30px;
+            padding-left: 20px;
+        }
+
+        .sidebar, .actions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .maintain-layout .btn-outline {
+             min-width: 200px;
+             text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="page" id="admin-dashboard-page">
+            <nav class="top-nav">
+                <button class="btn-outline btn-home">Home</button>
+                <button class="btn-outline btn-logout">LogOut</button>
+            </nav>
+
+            <div class="page-title-header">
+                Welcome Admin
+            </div>
+
+            <main class="admin-main-content">
+                <button class="btn-outline" id="goto-user">Maintain User</button>
+                <button class="btn-outline" id="goto-vendor">Maintain Vendor</button>
+            </main>
+        </div>
+
+        <div class="page hidden" id="maintain-user-page">
+            <nav class="top-nav">
+                <button class="btn-outline btn-home">Home</button>
+                <button class="btn-outline btn-logout">LogOut</button>
+            </nav>
+            
+            <div class="page-title-header">
+                Maintain User
+            </div>
+
+            <main class="maintain-layout">
+                <div class="sidebar">
+                    <button class="btn-outline">Membership</button>
+                    <button class="btn-outline">User Management</button>
+                </div>
+                <div class="actions-group">
+                    <button class="btn-outline">Add</button>
+                    <button class="btn-outline">Update</button>
+                </div>
+                <div class="actions-group">
+                    <button class="btn-outline">Add</button>
+                    <button class="btn-outline">Update</button>
+                </div>
+            </main>
+        </div>
+
+        <div class="page hidden" id="maintain-vendor-page">
+            <nav class="top-nav">
+                <button class="btn-outline btn-home">Home</button>
+                <button class="btn-outline btn-logout">LogOut</button>
+            </nav>
+            
+            <div class="page-title-header">
+                Maintain Vendor
+            </div>
+
+            <main class="maintain-layout">
+                <div class="sidebar">
+                    <button class="btn-outline">Membership</button>
+                    <button class="btn-outline">User Management</button>
+                </div>
+                <div class="actions-group">
+                    <button class="btn-outline">Add</button>
+                    <button class="btn-outline">Update</button>
+                </div>
+                <div class="actions-group">
+                    <button class="btn-outline">Add</button>
+                    <button class="btn-outline">Update</button>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <script>
+        const adminPage = document.getElementById('admin-dashboard-page');
+        const userPage = document.getElementById('maintain-user-page');
+        const vendorPage = document.getElementById('maintain-vendor-page');
+        
+        const gotoUserBtn = document.getElementById('goto-user');
+        const gotoVendorBtn = document.getElementById('goto-vendor');
+        
+        const homeButtons = document.querySelectorAll('.btn-home');
+        const logoutButtons = document.querySelectorAll('.btn-logout');
+
+        function showPage(pageToShow) {
+            adminPage.classList.add('hidden');
+            userPage.classList.add('hidden');
+            vendorPage.classList.add('hidden');
+            
+            pageToShow.classList.remove('hidden');
+        }
+
+        gotoUserBtn.addEventListener('click', () => {
+            showPage(userPage);
+        });
+
+        gotoVendorBtn.addEventListener('click', () => {
+            showPage(vendorPage);
+        });
+
+        homeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                showPage(adminPage);
+            });
+        });
+
+        logoutButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Logged Out');
+                showPage(adminPage);
+            });
+        });
+    </script>
+
+</body>
+</html>
